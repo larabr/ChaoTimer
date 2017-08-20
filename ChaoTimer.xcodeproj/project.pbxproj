@@ -193,12 +193,12 @@
 		0CF4688E1814B83300643E69 /* ShareSDKiPhoneSimpleShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF468581814B83200643E69 /* ShareSDKiPhoneSimpleShareViewUI.framework */; };
 		0CF468901814B87A00643E69 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF4688F1814B87A00643E69 /* SystemConfiguration.framework */; };
 		0CF468921814B8A000643E69 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF468911814B8A000643E69 /* CoreTelephony.framework */; };
-		0CF468941814B8AE00643E69 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF468931814B8AE00643E69 /* libicucore.dylib */; };
-		0CF468961814B8B800643E69 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF468951814B8B800643E69 /* libz.1.2.5.dylib */; };
 		0CF468991814BB4700643E69 /* CHTSocial.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF468981814BB4700643E69 /* CHTSocial.m */; };
 		0CF4689F1817685900643E69 /* CHTSocialObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4689E1817685900643E69 /* CHTSocialObject.m */; };
 		0CF468A21817688A00643E69 /* CHTSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF468A11817688A00643E69 /* CHTSocialViewController.m */; };
 		0CF7B4B3187E44D800B7500B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF7B4B2187E44D800B7500B /* CFNetwork.framework */; };
+		4FF1DE891F4A26B800022A0C /* libicucore.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF1DE881F4A26B800022A0C /* libicucore.A.dylib */; };
+		4FF1DE8D1F4A272E00022A0C /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF1DE8C1F4A272E00022A0C /* libz.1.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -439,8 +439,6 @@
 		0CF468581814B83200643E69 /* ShareSDKiPhoneSimpleShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPhoneSimpleShareViewUI.framework; sourceTree = "<group>"; };
 		0CF4688F1814B87A00643E69 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0CF468911814B8A000643E69 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		0CF468931814B8AE00643E69 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
-		0CF468951814B8B800643E69 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		0CF468971814BB4700643E69 /* CHTSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSocial.h; sourceTree = "<group>"; };
 		0CF468981814BB4700643E69 /* CHTSocial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTSocial.m; sourceTree = "<group>"; };
 		0CF4689D1817685800643E69 /* CHTSocialObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSocialObject.h; sourceTree = "<group>"; };
@@ -448,6 +446,8 @@
 		0CF468A01817688A00643E69 /* CHTSocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSocialViewController.h; sourceTree = "<group>"; };
 		0CF468A11817688A00643E69 /* CHTSocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTSocialViewController.m; sourceTree = "<group>"; };
 		0CF7B4B2187E44D800B7500B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4FF1DE881F4A26B800022A0C /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = ../../../../../../usr/lib/libicucore.A.dylib; sourceTree = "<group>"; };
+		4FF1DE8C1F4A272E00022A0C /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -455,10 +455,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF1DE8D1F4A272E00022A0C /* libz.1.dylib in Frameworks */,
+				4FF1DE891F4A26B800022A0C /* libicucore.A.dylib in Frameworks */,
+				0CF468741814B83300643E69 /* AGCommon.framework in Frameworks */,
+				0CF468771814B83300643E69 /* ShareSDKCoreService.framework in Frameworks */,
 				0CF7B4B3187E44D800B7500B /* CFNetwork.framework in Frameworks */,
 				0CA7691F1837D05D00EF3191 /* CoreMotion.framework in Frameworks */,
-				0CF468961814B8B800643E69 /* libz.1.2.5.dylib in Frameworks */,
-				0CF468941814B8AE00643E69 /* libicucore.dylib in Frameworks */,
 				0CF468921814B8A000643E69 /* CoreTelephony.framework in Frameworks */,
 				0CF468901814B87A00643E69 /* SystemConfiguration.framework in Frameworks */,
 				0CF4688A1814B83300643E69 /* ShareSDKiPhoneAppRecommendShareViewUI.framework in Frameworks */,
@@ -467,7 +469,6 @@
 				0CF4685B1814B83200643E69 /* EverNoteConnection.framework in Frameworks */,
 				0CF4685F1814B83200643E69 /* InstapaperConnection.framework in Frameworks */,
 				0CF4685D1814B83200643E69 /* FlickrConnection.framework in Frameworks */,
-				0CF468771814B83300643E69 /* ShareSDKCoreService.framework in Frameworks */,
 				0CF468671814B83200643E69 /* QQConnection.framework in Frameworks */,
 				0CF4685E1814B83200643E69 /* GooglePlusConnection.framework in Frameworks */,
 				0CF468711814B83200643E69 /* TwitterConnection.framework in Frameworks */,
@@ -507,7 +508,6 @@
 				0CF468591814B83200643E69 /* DouBanConnection.framework in Frameworks */,
 				0CF4687B1814B83300643E69 /* libSinaWeiboSDK.a in Frameworks */,
 				0CF468871814B83300643E69 /* ShareSDKiPadDefaultShareViewUI.framework in Frameworks */,
-				0CF468741814B83300643E69 /* AGCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,8 +579,8 @@
 			children = (
 				0CF7B4B2187E44D800B7500B /* CFNetwork.framework */,
 				0CA7691E1837D05D00EF3191 /* CoreMotion.framework */,
-				0CF468951814B8B800643E69 /* libz.1.2.5.dylib */,
-				0CF468931814B8AE00643E69 /* libicucore.dylib */,
+				4FF1DE881F4A26B800022A0C /* libicucore.A.dylib */,
+				4FF1DE8C1F4A272E00022A0C /* libz.1.dylib */,
 				0CF468911814B8A000643E69 /* CoreTelephony.framework */,
 				0CF4688F1814B87A00643E69 /* SystemConfiguration.framework */,
 				0CEB9A9A180E33580064182B /* MessageUI.framework */,
@@ -1284,21 +1284,18 @@
 		0C2FA70A17B1E37F00A006B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Connection,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Core,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Extend/GooglePlusSDK,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Extend/Pinterest.embeddedframework,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Extend/RenRenSDK,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Extend,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/UI,
+					"/Users/lara/Documents/Dev/iOS/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/**",
+					"$(PROJECT_DIR)/ChaoTimer/Social/ShareSDK_v2.5.1/Core",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChaoTimer/ChaoTimer-Prefix.pch";
@@ -1306,13 +1303,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Extend/libWeiboSDK,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Extend/SDKExport,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Extend/TencentWeiboSSO,
+					"/Users/lara/Documents/Dev/iOS/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/**",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s";
+				"VALID_ARCHS[sdk=*]" = "arm64 armv7 armv7s i386 x86_64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1320,21 +1318,18 @@
 		0C2FA70B17B1E37F00A006B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Connection,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Core,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Extend/GooglePlusSDK,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Extend/Pinterest.embeddedframework,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Extend/RenRenSDK,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Extend,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/UI,
+					"/Users/lara/Documents/Dev/iOS/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/**",
+					"$(PROJECT_DIR)/ChaoTimer/Social/ShareSDK_v2.5.1/Core",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChaoTimer/ChaoTimer-Prefix.pch";
@@ -1342,13 +1337,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Extend/libWeiboSDK,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Extend/SDKExport,
-					/Users/nijixuchao/Developer/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/Extend/TencentWeiboSSO,
+					"/Users/lara/Documents/Dev/iOS/ChaoTimer/ChaoTimer/Social/ShareSDK_v2.5.1/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
