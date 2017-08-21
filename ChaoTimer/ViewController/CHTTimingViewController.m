@@ -65,6 +65,7 @@ int oldScrSubType;
 int solvedTimes;
 int threshold;
 BOOL knockToStop;
+BOOL hideTimer;
 
 - (CHTSession *) session {
     if (!_session) {
@@ -137,6 +138,7 @@ BOOL knockToStop;
     solvedTimes = [CHTSettings intForKey:@"solvedTimes"];
     knockToStop = [CHTSettings boolForKey:@"knockToStop"];
     threshold = [CHTSettings intForKey:@"knockSensitivity"];
+    hideTimer = [CHTSettings boolForKey:@"hideTimer"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -264,8 +266,12 @@ BOOL knockToStop;
     mach_timebase_info_data_t info;
     mach_timebase_info(&info);
     self.time = (timeNow - self.timeWhenTimerStart) * info.numer / info.denom / 1000000;
-    NSString *timeToDisplay = [CHTUtil convertTimeFromMsecondToString:self.time];
-    [self.timeLabel setText:timeToDisplay];
+    if (hideTimer)
+      [self.timeLabel setText:@"..."];
+    else {
+      NSString *timeToDisplay = [CHTUtil convertTimeFromMsecondToString:self.time];
+      [self.timeLabel setText:timeToDisplay];
+    }
 }
 
 - (IBAction)startTimer:(UILongPressGestureRecognizer *)sender {
@@ -381,6 +387,9 @@ BOOL knockToStop;
             return;
         [self.myTimer invalidate];
         [self.inspectionTimer invalidate];
+        // show time (needed if running timer was hidden)
+        NSString *timeToDisplay = [CHTUtil convertTimeFromMsecondToString:self.time];
+        [self.timeLabel setText:timeToDisplay];
         self.timerStatus = TIMER_IDLE;
         inspectionBegin = NO;
         if (!plus2) {

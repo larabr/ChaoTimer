@@ -69,7 +69,7 @@
     // Return the number of rows in the section.
     switch (section) {
         case 0:
-            return 4;
+            return 5;
             break;
         case 1:
             return 2;
@@ -90,6 +90,22 @@
             switch (indexPath.row) {
                 case 0:
                 {
+                  cell.textLabel.text = [CHTUtil getLocalizedString:@"hide timer"];
+                  cell.detailTextLabel.text = [CHTUtil getLocalizedString:@"do not show running timer"];
+                  UISwitch *hideTimerSwitch = [[UISwitch alloc] init];
+                  [hideTimerSwitch addTarget:self action:@selector(hideTimerSwitchAction:) forControlEvents:UIControlEventValueChanged];
+                  if ([CHTSettings boolForKey: @"hideTimer"] == YES) {
+                    [hideTimerSwitch setOn:YES];
+                  }
+                  else {
+                    [hideTimerSwitch setOn:NO];
+                  }
+                  cell.accessoryView = hideTimerSwitch;
+                  cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                  break;
+                }
+                case 1:
+                {
                     cell.textLabel.text = [CHTUtil getLocalizedString:@"wca inspection"];
                     cell.detailTextLabel.text = [CHTUtil getLocalizedString:@"15 sec"];
                     UISwitch *wcaInsSwitch = [[UISwitch alloc] init];
@@ -104,7 +120,7 @@
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     break;
                 }
-                case 1:
+                case 2:
                 {
                     cell.textLabel.text = [CHTUtil getLocalizedString:@"knockToStop"];
                     cell.detailTextLabel.text = [CHTUtil getLocalizedString:@"knockToStopDetail"];
@@ -120,7 +136,7 @@
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     break;
                 }
-                case 2:
+                case 3:
                 {
                     cell.textLabel.text = [CHTUtil getLocalizedString:@"sensitivity"];
                     [cell.detailTextLabel setText:@""];
@@ -153,7 +169,7 @@
                     self.sensCell = cell;
                     break;
                 }
-                case 3:
+                case 4:
                 {
                     cell.textLabel.text = [CHTUtil getLocalizedString:@"start freeze"];
                     [cell.detailTextLabel setText:@" "];
@@ -170,6 +186,7 @@
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     break;
                 }
+
                 default:
                     break;
             }
@@ -293,5 +310,15 @@
     UISlider *slider = (UISlider *)sender;
     int progressAsInt = (int)roundf(slider.value);
     [CHTSettings saveInt:progressAsInt forKey:@"knockSensitivity"];
+}
+
+- (IBAction)hideTimerSwitchAction:(id)sender {
+  UISwitch *switchButton = (UISwitch*)sender;
+  BOOL isButtonOn = [switchButton isOn];
+  if (isButtonOn) {
+    [CHTSettings saveBool:YES forKey:@"hideTimer"];
+  }else {
+    [CHTSettings saveBool:NO forKey:@"hideTimer"];
+  }
 }
 @end
