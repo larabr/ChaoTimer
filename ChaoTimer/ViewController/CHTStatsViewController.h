@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ShareSDK/ISSShareViewDelegate.h>
 
-@interface CHTStatsViewController : UITableViewController <UIPopoverControllerDelegate, ISSShareViewDelegate>
+@interface CHTStatsViewController : UITableViewController <UIPopoverControllerDelegate>
 @property (nonatomic, strong) NSMutableArray *stats;
 @end

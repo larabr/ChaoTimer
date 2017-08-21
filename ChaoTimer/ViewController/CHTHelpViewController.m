@@ -7,10 +7,6 @@
 //
 
 #import "CHTHelpViewController.h"
-#import "CHTSocial.h"
-#import "CHTSocialObject.h"
-#import <ShareSDK/ShareSDK.h>
-#import <ShareSDK/ISSShareViewDelegate.h>
 
 @interface CHTHelpViewController ()
 @property (nonatomic, strong) CHTTheme *timerTheme;
@@ -123,7 +119,6 @@
     if (motion == UIEventSubtypeMotionShake)
     {
         NSLog(@"shake");
-        [CHTSocial superShare:self.navigationController.navigationBar.viewForBaselineLayout delegate:self];
     }
 }
 
@@ -168,44 +163,6 @@
 }
 
 
-- (void)viewOnWillDisplay:(UIViewController *)viewController shareType:(ShareType)shareType
-{
-    NSLog(@"view on will display delegate");
-    UIApplication *myApp = [UIApplication sharedApplication];
-    if (self.timerTheme.myTheme == THEME_WHITE) {
-        [myApp setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
-    } else {
-        [myApp setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
-    }
-    for (UIView *view in viewController.view.subviews) {
-        if ([view isKindOfClass:[UILabel class]]) {
-            UILabel *label = (UILabel *)view;
-            if ([label.text isEqualToString:@"share title"]) {
-                label.text = [[CHTSocialObject initWithType:shareType] toString];
-                label.font = [CHTTheme font:FONT_REGULAR iphoneSize:22.0f ipadSize:22.0f];
-            }
-        }
-    }
-    UIButton *leftBtn = (UIButton *)viewController.navigationItem.leftBarButtonItem.customView;
-    UIButton *rightBtn = (UIButton *)viewController.navigationItem.rightBarButtonItem.customView;
-    
-    leftBtn.backgroundColor = [UIColor clearColor];
-    rightBtn.backgroundColor = [UIColor clearColor];
-    [leftBtn setTitleColor:self.timerTheme.barItemColor forState:UIControlStateNormal];
-    [leftBtn setTitleColor:[UIColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:0.5f] forState:UIControlStateHighlighted];
-    [rightBtn setTitleColor:self.timerTheme.barItemColor forState:UIControlStateNormal];
-    [rightBtn setTitleColor:[UIColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:0.5f] forState:UIControlStateHighlighted];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-    label.backgroundColor = [UIColor clearColor];
-    label.textColor = self.timerTheme.textColor;
-    label.text = [[CHTSocialObject initWithType:shareType] toString];
-    label.font = [CHTTheme font:FONT_REGULAR iphoneSize:22.0f ipadSize:22.0f];
-    [label sizeToFit];
-    
-    viewController.navigationItem.titleView = label;
-    [viewController.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    [viewController.navigationController.navigationBar setBarTintColor:self.timerTheme.navigationColor];
-}
 
 /*
  // Override to support conditional editing of the table view.

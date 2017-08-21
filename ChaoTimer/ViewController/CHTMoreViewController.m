@@ -12,7 +12,6 @@
 #import "CHTTheme.h"
 #import "CHTThemeViewController.h"
 #import "CHTSettingViewController.h"
-#import "CHTSocialViewController.h"
 #import "CHTLicenseViewController.h"
 
 @interface CHTMoreViewController ()
@@ -74,7 +73,7 @@
             return 1;
             break;
         case 1:
-            return 3;
+            return 2;
             break;
         case 2:
             return 3;
@@ -187,9 +186,6 @@
                 case 1:
                     [self pushToSettingView];
                     break;
-                case 2:
-                    [self pushToSocialSettingView];
-                    break;
                 default:
                     break;
                     
@@ -235,11 +231,6 @@
     [self.navigationController pushViewController:settingViewController animated:YES];
 }
 
-- (IBAction) pushToSocialSettingView {
-    CHTSocialViewController *socialViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"socialSetting"];
-    socialViewController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:socialViewController animated:YES];
-}
 
 - (IBAction) pushToLicenseView {
     CHTLicenseViewController *licenseViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"license"];
