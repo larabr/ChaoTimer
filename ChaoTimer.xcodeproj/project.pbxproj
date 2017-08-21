@@ -929,6 +929,7 @@
 				ARCHS = (
 					armv7s,
 					armv7,
+					arm64,
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -966,6 +967,7 @@
 				ARCHS = (
 					armv7s,
 					armv7,
+					arm64,
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
