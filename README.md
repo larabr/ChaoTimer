@@ -1,7 +1,8 @@
 ChaoTimer
 =========
 
-This is the source code of ChaoTimer 3.0
+This is the source code of a custom version of ChaoTimer 3.0, which lets you hide the timer during a solve.
+Social share features have been removed because the library used caused compatibility problems with x64 processors.
 
 # License GPLv3
 
